@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/chris/Desktop/sdu/MySQL/Exam/build",
-		"source" : "/home/chris/Desktop/sdu/MySQL/Exam"
+		"build" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build",
+		"source" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software"
 	},
 	"version" : 
 	{

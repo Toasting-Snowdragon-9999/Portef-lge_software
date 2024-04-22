@@ -1,5 +1,5 @@
-/home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/Game.dir
-/home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/package.dir
-/home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/package_source.dir
-/home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/edit_cache.dir
-/home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/rebuild_cache.dir
+/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/Game.dir
+/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/package.dir
+/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/package_source.dir
+/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/edit_cache.dir
+/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/rebuild_cache.dir

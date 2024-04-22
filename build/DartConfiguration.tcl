@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/chris/Desktop/sdu/MySQL/Exam
-BuildDirectory: /home/chris/Desktop/sdu/MySQL/Exam/build
+SourceDirectory: /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software
+BuildDirectory: /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -14,7 +14,7 @@ CostDataFile:
 Site: UbuntuBeast
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-clang++-14
+BuildName: Linux-g++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/chris/Desktop/sdu/MySQL/Exam"
+ConfigureCommand: "/usr/bin/cmake" "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
@@ -44,7 +44,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -57,13 +57,13 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/clang++-14
-CompilerVersion: 14.0.0
+Compiler: /usr/bin/g++
+CompilerVersion: 11.4.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

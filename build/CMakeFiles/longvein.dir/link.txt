@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblongvein.a CMakeFiles/longvein.dir/longvein.cpp.o
+/usr/bin/ranlib liblongvein.a

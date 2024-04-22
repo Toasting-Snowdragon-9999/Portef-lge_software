@@ -1,4 +1,4 @@
-# Install script for directory: /home/chris/Desktop/sdu/MySQL/Exam
+# Install script for directory: /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-14")
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chris/Desktop/sdu/MySQL/Exam/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

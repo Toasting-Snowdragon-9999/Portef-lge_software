@@ -27,7 +27,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-addr2line-14"
+			"value" : "/usr/bin/addr2line"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -43,7 +43,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ar-14"
+			"value" : "/usr/bin/ar"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/build"
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -171,7 +171,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang++-14"
+			"value" : "/usr/bin/g++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -183,11 +183,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "LLVM archiver"
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ar-14"
+			"value" : "/usr/bin/gcc-ar-11"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -199,11 +199,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Generate index for LLVM archive"
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ranlib-14"
+			"value" : "/usr/bin/gcc-ranlib-11"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -299,7 +299,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang-14"
+			"value" : "/usr/bin/gcc"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -311,11 +311,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "LLVM archiver"
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ar-14"
+			"value" : "/usr/bin/gcc-ar-11"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -327,11 +327,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Generate index for LLVM archive"
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ranlib-14"
+			"value" : "/usr/bin/gcc-ranlib-11"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -427,7 +427,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-dlltool-14"
+			"value" : "CMAKE_DLLTOOL-NOTFOUND"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam"
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -755,7 +755,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-nm-14"
+			"value" : "/usr/bin/nm"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -783,7 +783,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-objcopy-14"
+			"value" : "/usr/bin/objcopy"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -799,7 +799,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-objdump-14"
+			"value" : "/usr/bin/objdump"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-ranlib-14"
+			"value" : "/usr/bin/ranlib"
 		},
 		{
 			"name" : "CMAKE_READELF",
@@ -939,7 +939,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-readelf-14"
+			"value" : "/usr/bin/readelf"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1159,7 +1159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/llvm-strip-14"
+			"value" : "/usr/bin/strip"
 		},
 		{
 			"name" : "CMAKE_UNAME",
@@ -1526,6 +1526,22 @@
 			"value" : "1500"
 		},
 		{
+			"name" : "GITCOMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/git"
+		},
+		{
 			"name" : "Game_BINARY_DIR",
 			"properties" : 
 			[
@@ -1535,7 +1551,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/build"
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build"
 		},
 		{
 			"name" : "Game_IS_TOP_LEVEL",
@@ -1559,7 +1575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam"
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software"
 		},
 		{
 			"name" : "MAKECOMMAND",
@@ -1608,42 +1624,6 @@
 			],
 			"type" : "FILEPATH",
 			"value" : ""
-		},
-		{
-			"name" : "PA2_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/build"
-		},
-		{
-			"name" : "PA2_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "PA2_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/chris/Desktop/sdu/MySQL/Exam"
 		},
 		{
 			"name" : "Qt5Core_DIR",
@@ -1756,6 +1736,42 @@
 			],
 			"type" : "STRING",
 			"value" : "UbuntuBeast"
+		},
+		{
+			"name" : "longvein_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build"
+		},
+		{
+			"name" : "longvein_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "longvein_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software"
 		}
 	],
 	"kind" : "cache",

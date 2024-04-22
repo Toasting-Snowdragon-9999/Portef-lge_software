@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/main.cpp" "CMakeFiles/Game.dir/main.cpp.o" "gcc" "CMakeFiles/Game.dir/main.cpp.o.d"
+  "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/longvein.cpp" "CMakeFiles/longvein.dir/longvein.cpp.o" "gcc" "CMakeFiles/longvein.dir/longvein.cpp.o.d"
   )
 
 # Targets to which this target links.

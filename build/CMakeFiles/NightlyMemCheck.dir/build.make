@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chris/Desktop/sdu/MySQL/Exam
+CMAKE_SOURCE_DIR = /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chris/Desktop/sdu/MySQL/Exam/build
+CMAKE_BINARY_DIR = /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build
 
 # Utility rule file for NightlyMemCheck.
 
@@ -82,6 +82,6 @@ CMakeFiles/NightlyMemCheck.dir/clean:
 .PHONY : CMakeFiles/NightlyMemCheck.dir/clean
 
 CMakeFiles/NightlyMemCheck.dir/depend:
-	cd /home/chris/Desktop/sdu/MySQL/Exam/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chris/Desktop/sdu/MySQL/Exam /home/chris/Desktop/sdu/MySQL/Exam /home/chris/Desktop/sdu/MySQL/Exam/build /home/chris/Desktop/sdu/MySQL/Exam/build /home/chris/Desktop/sdu/MySQL/Exam/build/CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build/CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NightlyMemCheck.dir/depend
 
