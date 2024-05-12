@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/game.cpp" "CMakeFiles/Game.dir/game.cpp.o" "gcc" "CMakeFiles/Game.dir/game.cpp.o.d"
   "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/main.cpp" "CMakeFiles/Game.dir/main.cpp.o" "gcc" "CMakeFiles/Game.dir/main.cpp.o.d"
   )
 

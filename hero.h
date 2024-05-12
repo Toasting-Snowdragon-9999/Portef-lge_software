@@ -6,47 +6,39 @@
 #include <string>
 #include <QtSql>
 #include <QSqlDatabase>
-#include "setup.h"
 
 class Hero {   
     private:
-        QString _name; 
+        std::string _name; 
         double _current_hp;
         double _max_hp;
         double _xp; 
         int _level;
         int _strength;  
-
-        QSqlQuery query;
+        double _gold;
 
     public:
         Hero(){}
 
-        void Load_Hero(std::string name){
-            this->_name = QString::fromUtf8(name.c_str());
-            query.prepare("SELECT * FROM hero where name = ?;");
-            query.addBindValue (this->_name); 
-            query.exec();
-            while(query.next()){
-                this -> _level = query.value(2).toInt();
-                this -> _current_hp = query.value(3).toDouble();
-                this -> _max_hp = query.value(4).toDouble();
-                this -> _strength = query.value(5).toInt();
-                this ->_xp = query.value(6).toDouble();
-            }
+        void Load_Hero(std::vector <std::string> hero_data){
+            this -> _name = hero_data[1];
+            this -> _level = stoi(hero_data[2]); //query.value(2).toInt();
+            this -> _current_hp = stod(hero_data[3]); //query.value(3).toDouble();
+            this -> _max_hp = stod(hero_data[4]);   //query.value(4).toDouble();
+            this -> _strength =  stod(hero_data[5]);       //query.value(5).toInt();
+            this ->_xp = stod(hero_data[6]);       //query.value(6).toDouble();
+            this -> _gold = stod(hero_data[7]);
+
         }
 
         void New_Hero(std::string name){
-            this -> _name = QString::fromUtf8(name.c_str());
+            this -> _name = name;
             this-> _current_hp = 10.0;
             this -> _max_hp = 10.0;
             this -> _xp = 0.0;
             this -> _level = 1;
             this -> _strength = 2;
-
-            query.prepare("INSERT IGNORE INTO hero (name, level, currentHP, maxHP, strength, xp) VALUES (?,1,10,10,2,0)");
-            query.addBindValue(this->_name); 
-            query.exec(); 
+            this -> _gold = 0;
 
         }
 
@@ -71,7 +63,9 @@ class Hero {
         double get_max_hp(){
             return this-> _max_hp;
         }
-
+        double get_gold(){
+            return this -> _gold;
+        }
         int get_level(){
             return this-> _level;
         }
@@ -85,11 +79,17 @@ class Hero {
         }
 
         QString get_Qname(){
-            return this-> _name;
+
+            QString Qname = QString::fromUtf8(_name.c_str());
+            return Qname;
         }
 
         std::string get_Sname(){
-            return _name.toStdString();
+            return this-> _name;
+        }
+
+        void update_gold(double gold){
+            this -> _gold += gold;
         }
 
         void set_xp(double xp){
@@ -107,16 +107,44 @@ class Hero {
             this -> _max_hp++;
             this -> _xp=0; 
             heal_max(); 
+            if(this -> _level > 10){
+            std::cout << "-------------------------------" << std::endl;
+            std::cout << "| HOORAY! You have leveled up!|" << std::endl;
+            std::cout << "| You are now lvl "<< this -> _level << "           |"<< std::endl;
+            std::cout << "-------------------------------" << std::endl;
+            }
+            else {
+                std::cout << "-------------------------------" << std::endl;
+                std::cout << "| HOORAY! You have leveled up!|" << std::endl;
+                std::cout << "| You are now lvl "<< this -> _level << "          |"<< std::endl;
+                std::cout << "-------------------------------" << std::endl;
+            }
+
         }
 
         void get_stats(){
-            std::cout << "------------------" << std::endl;
-            std::cout << "| " << "HP: " << this ->_current_hp << "/ "<< this -> _max_hp << "     |" << std::endl;
-            std::cout << "| " << "Strength: " << this -> _strength << "   |" << std::endl;
-            std::cout << "| " << "LVL: " << this ->_level << "        |" << std::endl;
 
-            std::cout << "| " << "XP: " << this ->_xp << "/" << 1000*this-> _level << " |" << std::endl;
-            std::cout << "------------------" << std::endl;
+
+            std::vector<std::string> lines;
+            lines.push_back("| HP: " + std::to_string(int(_current_hp)) + "/ " + std::to_string(int(_max_hp)) + " ");
+            lines.push_back("| Strength: " + std::to_string(int(_strength)) + " ");
+            lines.push_back("| LVL: " + std::to_string(_level) + " ");
+            lines.push_back("| XP: " + std::to_string(long(_xp)) + "/" + std::to_string(_level) + "000 "); // Assuming this->_level + "000" is a concatenation in string format
+            lines.push_back("| GOLD: " + std::to_string(long(_xp)) + " ");
+            // Determine the longest line
+            size_t max_length = 0;
+            for (const auto& line : lines) {
+                max_length = std::max(max_length, line.size());
+            }
+
+            // Print each line with the right amount of padding to align the '|'
+            std::cout << std::string(max_length, '-') << std::endl;
+            for (const auto& line : lines) {
+                std::cout << line.substr(0, line.find_last_of(' ') + 1)
+                          << std::string(max_length - line.size(), ' ') << '|' << std::endl;
+            }
+            std::cout << std::string(max_length, '-') << std::endl;
+
         }
 
     
@@ -125,3 +153,5 @@ class Hero {
 
 #endif
 // Path: hero.cpp   
+
+

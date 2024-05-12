@@ -1698,6 +1698,18 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Quick"
 		},
 		{
+			"name" : "Qt5SQL_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt5SQL."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Qt5SQL_DIR-NOTFOUND"
+		},
+		{
 			"name" : "Qt5Sql_DIR",
 			"properties" : 
 			[

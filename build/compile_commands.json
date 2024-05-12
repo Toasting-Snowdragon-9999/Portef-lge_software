@@ -1,7 +1,12 @@
 [
 {
   "directory": "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build",
-  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtQuick -isystem /usr/include/x86_64-linux-gnu/qt5/QtQmlModels -isystem /usr/include/x86_64-linux-gnu/qt5/QtQml -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -g -fPIC -o CMakeFiles/Game.dir/main.cpp.o -c /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/main.cpp",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtQuick -isystem /usr/include/x86_64-linux-gnu/qt5/QtQmlModels -isystem /usr/include/x86_64-linux-gnu/qt5/QtQml -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -g -fPIC -o CMakeFiles/Game.dir/main.cpp.o -c /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/main.cpp",
   "file": "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/main.cpp"
+},
+{
+  "directory": "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtQuick -isystem /usr/include/x86_64-linux-gnu/qt5/QtQmlModels -isystem /usr/include/x86_64-linux-gnu/qt5/QtQml -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -g -fPIC -o CMakeFiles/Game.dir/game.cpp.o -c /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/game.cpp",
+  "file": "/home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/game.cpp"
 }
 ]

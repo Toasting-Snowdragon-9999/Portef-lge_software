@@ -6,33 +6,24 @@
 #include <string>
 #include <QtSql>
 #include <QSqlDatabase>
-#include "setup.h"
+#include<unistd.h>               // for sleep
 
 class Enemy {
     private:
         int _health;
-        QString _type;
-        QString _name;
+        std::string _name;
         int _strength; 
-        double _xp_worth; 
-        QSqlQuery query;
+        double _xp_worth;
+        int _biome_id;
 
     public:
-        Enemy(QString name, QString type, int health, int strength, double xp_worth){
-            this -> _type = type;
-            this -> _name = "NULL";
+        Enemy(std::string name, int health, int strength, double xp_worth, int biome_id){
+
+            this -> _name = name;
             this -> _health = health;
             this -> _strength = strength;
             this -> _xp_worth = xp_worth;
-            
-            query.prepare("INSERT IGNORE INTO enemy (name, type, health, strength, xp_worth) VALUES (?,?,?,?,?)");
-            query.addBindValue(name);
-            query.addBindValue(type); 
-            query.addBindValue(health); 
-            query.addBindValue(strength);
-            query.addBindValue(xp_worth);
-            query.exec(); 
-
+            this -> _biome_id = biome_id;
         }
 
         void dmg_taken(int dmg){
@@ -43,7 +34,7 @@ class Enemy {
             this -> _health = _health + heal;
         }
 
-        void set_name(QString name){
+        void set_name(std::string name){
             this -> _name = name;
         }
 
@@ -55,12 +46,9 @@ class Enemy {
             return this->_health;
         }
 
-        QString get_type(){
-            return this->_type;
-        }
-
-        QString get_name(){
-            return this->_name;
+        std::string get_name(){
+            
+            return _name;
         }
 
         int get_strength(){
@@ -71,7 +59,52 @@ class Enemy {
             return this->_xp_worth;
         }
 
+        void boss_fight(){
 
+            if (get_name() == "Dragon"){
+                sleep(2);
+                std::cout << "BEHOLD THE GREAT WHITE DRAGON!!!" << std::endl;
+                sleep(2);
+                std::cout << "/ /   **THUNDER**   / /" << std::endl;
+                std::cout << "- -   **THUNDER**   - -" << std::endl;
+                std::cout << " / /   **THUNDER**   / /" << std::endl;
+                sleep(2);
+                std::cout << std::endl;
+                std::cout << std::endl;
+                std::cout << "/ /   **THUNDER**   / /" << std::endl;
+                std::cout << "- -   **THUNDER**   - -" << std::endl;
+                std::cout << " / /   **THUNDER**   / /" << std::endl;
+                std::cout << std::endl;
+                std::cout << std::endl;
+                sleep(2);
+                std::cout << "--------------------" << std::endl;
+                std::cout << "--------------------" << std::endl;
+                std::cout << "--------------------" << std::endl;
+                std::cout << "LONGVEIN THE DESROYER" << std::endl;
+                std::cout << "SECOND TO HIS NAME!!" << std::endl;
+                std::cout << "--------------------" << std::endl;
+                std::cout << "--------------------" << std::endl;
+                std::cout << "--------------------" << std::endl;
+                sleep(2);
+                std::cout << "/ /   **THUNDER**   / /" << std::endl;
+                std::cout << "- -   **THUNDER**   - -" << std::endl;
+                std::cout << " / /   **THUNDER**   / /" << std::endl;
+                sleep(2);
+                std::cout << std::endl;
+                std::cout << std::endl;
+                std::cout << "/ /   **THUNDER**   / /" << std::endl;
+                std::cout << "- -   **THUNDER**   - -" << std::endl;
+                std::cout << " / /   **THUNDER**   / /" << std::endl;
+                std::cout << std::endl;
+                std::cout << std::endl;
+                sleep(2);
+            }
+            else if (get_name() == "GoblinKing"){
+
+            }
+
+            else {std::cout << std::endl;}
+        }
 
 }; 
 

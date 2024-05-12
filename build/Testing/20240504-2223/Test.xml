@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Linux-g++"
-	BuildStamp="20240422-1136-Experimental"
+	BuildStamp="20240504-2223-Experimental"
 	Name="UbuntuBeast"
 	Generator="ctest-3.22.1"
 	CompilerName="/usr/bin/g++"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="2047"
 	TotalPhysicalMemory="27738"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="1600"
+	ProcessorClockFrequency="3200"
 	>
 	<Testing>
-		<StartDateTime>Apr 22 14:23 CEST</StartDateTime>
-		<StartTestTime>1713788621</StartTestTime>
+		<StartDateTime>May 05 00:23 CEST</StartDateTime>
+		<StartTestTime>1714861433</StartTestTime>
 		<TestList/>
-		<EndDateTime>Apr 22 14:23 CEST</EndDateTime>
-		<EndTestTime>1713788621</EndTestTime>
+		<EndDateTime>May 05 00:23 CEST</EndDateTime>
+		<EndTestTime>1714861433</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

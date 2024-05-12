@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Linux-g++"
-	BuildStamp="20240422-1136-Experimental"
+	BuildStamp="20240508-1307-Experimental"
 	Name="UbuntuBeast"
 	Generator="ctest-3.22.1"
 	CompilerName="/usr/bin/g++"
 	CompilerVersion="11.4.0"
 	OSName="Linux"
 	Hostname="UbuntuBeast"
-	OSRelease="5.15.0-1058-realtime"
-	OSVersion="#66-Ubuntu SMP PREEMPT_RT Tue Mar 19 13:58:37 UTC 2024"
+	OSRelease="5.15.0-1061-realtime"
+	OSVersion="#69-Ubuntu SMP PREEMPT_RT Mon Apr 15 18:56:55 UTC 2024"
 	OSPlatform="x86_64"
 	Is64Bits="1"
 	VendorString="AuthenticAMD"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="2047"
 	TotalPhysicalMemory="27738"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="1600"
+	ProcessorClockFrequency="3200"
 	>
 	<Testing>
-		<StartDateTime>Apr 22 14:23 CEST</StartDateTime>
-		<StartTestTime>1713788621</StartTestTime>
+		<StartDateTime>May 08 15:07 CEST</StartDateTime>
+		<StartTestTime>1715173643</StartTestTime>
 		<TestList/>
-		<EndDateTime>Apr 22 14:23 CEST</EndDateTime>
-		<EndTestTime>1713788621</EndTestTime>
+		<EndDateTime>May 08 15:07 CEST</EndDateTime>
+		<EndTestTime>1715173643</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
