@@ -19,21 +19,20 @@
 class Game_Control {
     private: 
         Hero _hero; 
-        DB_Handler db;
+        DB_Handler _db;
         std::vector <Biome> _biome;  
         std::vector <Enemy> _enemies; 
         std::vector <std::string> _current_enemies;
         std::vector <int> _current_enemies_xp;
     public: 
-        Game_Control(){
-            db.set_up_db();
+        Game_Control(std::string username, std::string password) : _db(username, password){
             set_up_biome();
             set_up_enemy();
 
         }
 
         ~Game_Control(){
-            db.update_hero(_hero); 
+            _db.update_hero(_hero);
         }
 
         void test(){
@@ -45,22 +44,22 @@ class Game_Control {
             //INSERT IGNORE INTO biome (name, type, enemy_count, level, gold)
             Biome forest;
             forest.biome_init("Forest", "normal", 5, 1, 1000);
-            db.create_biome("Forest", "normal", 5, 1, 1000);
+            _db.create_biome("Forest", "normal", 5, 1, 1000);
             _biome.push_back(forest);
 
             Biome mountain;
             mountain.biome_init("Mountain", "normal", 5, 2, 2000);
-            db.create_biome("Mountain", "normal", 5, 2, 2000);
+            _db.create_biome("Mountain", "normal", 5, 2, 2000);
             _biome.push_back(mountain);
 
             Biome cave;
             cave.biome_init("Cave", "dark", 5, 5, 5000);
-            db.create_biome("Cave", "dark", 5, 5, 5000);
+            _db.create_biome("Cave", "dark", 5, 5, 5000);
             _biome.push_back(cave);
 
             Biome dragonLair;
             dragonLair.biome_init("DragonLair", "dragon", 7, 6, 6000);
-            db.create_biome("DragonLair", "dragon", 7, 6, 6000);
+            _db.create_biome("DragonLair", "dragon", 7, 6, 6000);
             _biome.push_back(dragonLair);
 
             // Biome city("Suzail", "City", 5, 1, 1000);
@@ -78,60 +77,60 @@ class Game_Control {
         }
 
         void set_up_enemy(){
-            Enemy boar(  "boar", 4, 1, 100, db.get_biome_id(_biome[0]));
-            db.create_enemy("boar", boar.get_health(), boar.get_strength(), boar.get_xp_worth(), db.get_biome_id(_biome[0]));
+            Enemy boar(  "boar", 4, 1, 100, _db.get_biome_id(_biome[0]));
+            _db.create_enemy("boar", boar.get_health(), boar.get_strength(), boar.get_xp_worth(), _db.get_biome_id(_biome[0]));
             _enemies.push_back(boar);
 
-            Enemy wolf(  "wolf", 2, 2, 100, db.get_biome_id(_biome[0]));
-            db.create_enemy(  "wolf", 2, 2, 100, db.get_biome_id(_biome[0]));
+            Enemy wolf(  "wolf", 2, 2, 100, _db.get_biome_id(_biome[0]));
+            _db.create_enemy(  "wolf", 2, 2, 100, _db.get_biome_id(_biome[0]));
             _enemies.push_back(wolf);
 
-            Enemy bear(  "bear", 5, 2, 200, db.get_biome_id(_biome[0]));
-            db.create_enemy(  "bear", 5, 2, 200, db.get_biome_id(_biome[1]));
+            Enemy bear(  "bear", 5, 2, 200, _db.get_biome_id(_biome[0]));
+            _db.create_enemy(  "bear", 5, 2, 200, _db.get_biome_id(_biome[1]));
             _enemies.push_back(bear);
 
-            Enemy goblin(  "goblin", 6, 3, 400, db.get_biome_id(_biome[1]));
-            db.create_enemy(  "goblin", 6, 3, 400, db.get_biome_id(_biome[1]));
+            Enemy goblin(  "goblin", 6, 3, 400, _db.get_biome_id(_biome[1]));
+            _db.create_enemy(  "goblin", 6, 3, 400, _db.get_biome_id(_biome[1]));
             _enemies.push_back(goblin);
 
-            Enemy orc(  "orc", 8, 4, 600, db.get_biome_id(_biome[1]));
-            db.create_enemy(  "orc", 8, 4, 600, db.get_biome_id(_biome[1]));
+            Enemy orc(  "orc", 8, 4, 600, _db.get_biome_id(_biome[1]));
+            _db.create_enemy(  "orc", 8, 4, 600, _db.get_biome_id(_biome[1]));
             _enemies.push_back(orc);
 
-            Enemy MightyGoblin(  "Mighty Goblin", 10, 5, 700, db.get_biome_id(_biome[1]));
-            db.create_enemy(  "Mighty Goblin", 10, 5, 700, db.get_biome_id(_biome[1]));
+            Enemy MightyGoblin(  "Mighty Goblin", 10, 5, 700, _db.get_biome_id(_biome[1]));
+            _db.create_enemy(  "Mighty Goblin", 10, 5, 700, _db.get_biome_id(_biome[1]));
             _enemies.push_back(MightyGoblin);
 
-            Enemy troll(  "troll", 10, 5, 900, db.get_biome_id(_biome[2]));
-            db.create_enemy(  "troll", 10, 5, 900, db.get_biome_id(_biome[2]));
+            Enemy troll(  "troll", 10, 5, 900, _db.get_biome_id(_biome[2]));
+            _db.create_enemy(  "troll", 10, 5, 900, _db.get_biome_id(_biome[2]));
             _enemies.push_back(troll);
 
-            Enemy giant(  "giant", 12, 6, 1000, db.get_biome_id(_biome[2]));
-            db.create_enemy(  "giant", 12, 6, 1000, db.get_biome_id(_biome[2]));
+            Enemy giant(  "giant", 12, 6, 1000, _db.get_biome_id(_biome[2]));
+            _db.create_enemy(  "giant", 12, 6, 1000, _db.get_biome_id(_biome[2]));
             _enemies.push_back(giant);
 
-            Enemy basilisk (  "basilisk", 12, 6, 1200, db.get_biome_id(_biome[2]));
-            db.create_enemy(  "basilisk", 12, 6, 1200, db.get_biome_id(_biome[2]));
+            Enemy basilisk (  "basilisk", 12, 6, 1200, _db.get_biome_id(_biome[2]));
+            _db.create_enemy(  "basilisk", 12, 6, 1200, _db.get_biome_id(_biome[2]));
             _enemies.push_back(basilisk);
 
-            Enemy GoblingKing("Goblin King", 15, 7, 2000, db.get_biome_id(_biome[1])); //Gurp the goblin king
-            db.create_enemy("Goblin King", 15, 7, 2000, db.get_biome_id(_biome[1]));
+            Enemy GoblingKing("Goblin King", 15, 7, 2000, _db.get_biome_id(_biome[1])); //Gurp the goblin king
+            _db.create_enemy("Goblin King", 15, 7, 2000, _db.get_biome_id(_biome[1]));
             _enemies.push_back(GoblingKing);
 
-            Enemy kobold(  "Kobold", 8, 3, 600, db.get_biome_id(_biome[3]));
-            db.create_enemy(  "Kobold", 8, 3, 600, db.get_biome_id(_biome[3]));
+            Enemy kobold(  "Kobold", 8, 3, 600, _db.get_biome_id(_biome[3]));
+            _db.create_enemy(  "Kobold", 8, 3, 600, _db.get_biome_id(_biome[3]));
             _enemies.push_back(kobold);
 
-            Enemy wyrmling (  "Wyrmling", 10, 5, 900, db.get_biome_id(_biome[3]));
-            db.create_enemy(  "Wyrmling", 10, 5, 900, db.get_biome_id(_biome[3]));
+            Enemy wyrmling (  "Wyrmling", 10, 5, 900, _db.get_biome_id(_biome[3]));
+            _db.create_enemy(  "Wyrmling", 10, 5, 900, _db.get_biome_id(_biome[3]));
             _enemies.push_back(wyrmling);
 
-            Enemy small_dragon (  "SmallDragon", 14, 6, 1800, db.get_biome_id(_biome[3]));
-            db.create_enemy(  "SmallDragon", 14, 6, 1800, db.get_biome_id(_biome[3]));
+            Enemy small_dragon (  "SmallDragon", 14, 6, 1800, _db.get_biome_id(_biome[3]));
+            _db.create_enemy(  "SmallDragon", 14, 6, 1800, _db.get_biome_id(_biome[3]));
             _enemies.push_back(small_dragon);
 
-            Enemy dragon("Dragon", 28, 7, 3000, db.get_biome_id(_biome[3]));
-            db.create_enemy("Dragon", 28, 7, 3000, db.get_biome_id(_biome[3]));
+            Enemy dragon("Dragon", 28, 7, 3000, _db.get_biome_id(_biome[3]));
+            _db.create_enemy("Dragon", 28, 7, 3000, _db.get_biome_id(_biome[3]));
             _enemies.push_back(dragon);
 
             //ENEMY LIST!!! --------------------------------------------------------------------------------
@@ -167,7 +166,7 @@ class Game_Control {
                                 std::cout << "Enter your name: ";
                                 std::cin >> name;
                                 hero.New_Hero(name); // Initialize the Hero object inside the case
-                                db.create_hero(name);
+                                _db.create_hero(name);
                                 break;
                         case 2:
                                
@@ -178,11 +177,11 @@ class Game_Control {
                                 std::cout << "Enter the name of the character you want to load: ";
                                 try{
                                 std::cin >> name2;
-                                if (db.check_for_hero(name2)==false){
+                                if (_db.check_for_hero(name2)==false){
                                     throw std::invalid_argument("No hero by that name try again!"); 
                                     }
                                 
-                                hero.Load_Hero(db.find_hero(name2)); // Initialize the Hero object inside the case
+                                hero.Load_Hero(_db.find_hero(name2)); // Initialize the Hero object inside the case
                                 }catch (const std::invalid_argument& e){
                                     std::cout << "Caught exception: " << e.what() << std::endl; 
                                     std::cout << std::endl; 
@@ -216,8 +215,8 @@ class Game_Control {
         }
 
         void print_hero_names(){
-            std::vector <std::string> length = db.all_heroes()[0];
-            std::vector <std::vector <std::string>> AH = db.all_heroes(); 
+            std::vector <std::string> length = _db.all_heroes()[0];
+            std::vector <std::vector <std::string>> AH = _db.all_heroes();
             if (AH.empty() || AH[0].empty()) {
                     std::cerr << "Error: No heroes available." << std::endl;
 
@@ -333,8 +332,8 @@ class Game_Control {
 
     Biome choose_biome(){
         std::cout << "choose a biome you want to explore!" << std::endl; 
-        std::vector <std::string> biome_name = db.get_biome_list()[0];
-        std::vector <std::string> difficulty = db.get_biome_list()[1];
+        std::vector <std::string> biome_name = _db.get_biome_list()[0];
+        std::vector <std::string> difficulty = _db.get_biome_list()[1];
 
         //THIS ALIGNED THE TERMINAL SO THAT IT LOOKS GOOD, IT ALIGNES BY CALCULATING THE DIFFERENCE IN STRING SIZE AND THEN ADDING PADDING
         if (biome_name.size() != difficulty.size()) {
@@ -397,9 +396,9 @@ class Game_Control {
     }
 
     void set_enemy_for_biome(Biome biome){
-        int id = db.get_biome_id(biome)-1;  //biome id is from 1-4 but the get_enemy_in_biome uses 0 indexing.
-        this -> _current_enemies_xp = db.get_enemy_xp_in_biome()[id];
-        this -> _current_enemies = db.get_enemy_in_biome()[id];
+        int id = _db.get_biome_id(biome)-1;  //biome id is from 1-4 but the get_enemy_in_biome uses 0 indexing.
+        this -> _current_enemies_xp = _db.get_enemy_xp_in_biome()[id];
+        this -> _current_enemies = _db.get_enemy_in_biome()[id];
 
     }
 
@@ -418,7 +417,7 @@ class Game_Control {
 
 //GAME OVER --------------------------------------------------------------
         void Game_Over(){
-            db.game_over(_hero.get_Qname());
+            _db.game_over(_hero.get_Qname());
             throw ExitGameException();  // Throw to signal game exit
         }
 }; 

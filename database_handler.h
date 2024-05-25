@@ -14,33 +14,48 @@ class DB_Handler{
     private: 
         QSqlDatabase db; 
         QSqlQuery query;
-
+        QString _password;
+        QString _username;
     public: 
+        DB_Handler(std::string username, std::string password) : _username(QString::fromStdString(username)), _password(QString::fromStdString(password)){}
 
         void set_up_db(){
 
             db = QSqlDatabase::addDatabase("QMYSQL");
             db.setHostName("localhost");
-            db.setDatabaseName("longvein");
-            db.setUserName("christopher");  // Change to username
-            db.setPassword("0221");  // Change to password
+//            db.setDatabaseName("longvein");
+            db.setUserName(_username);  // Change to username
+            db.setPassword(_password);  // Change to password
             db.open();
-            query = QSqlQuery(db);
 
             if (!db.isOpen()) {
             std::cerr << "Error: Unable to open database\n";
             
             }
 
-            QString createTableQueryEnemy = "CREATE TABLE IF NOT EXISTS enemy ("
+            db.exec("CREATE DATABASE IF NOT EXISTS longvein");
+            db.setDatabaseName("longvein");
+            db.exec("USE longvein");
+            query = QSqlQuery(db);
+
+            QString createTableQueryBiome = "CREATE TABLE IF NOT EXISTS biome ("
                                         "id INT AUTO_INCREMENT PRIMARY KEY,"
                                         "name VARCHAR(255) UNIQUE NOT NULL,"
-                                        "health INT,"
-                                        "strength INT NOT NULL,"
-                                        "xp_worth double NOT NULL,"
-                                        "biome_id INT,"
-                                        "FOREIGN KEY (biome_id) REFERENCES biome(id)"
+                                        "type VARCHAR(255) NOT NULL,"
+                                        "enemy_count double NOT NULL,"
+                                        "level int NOT NULL,"
+                                        "gold double NOT NULL"
                                         ");";
+            query.exec(createTableQueryBiome);
+
+            QString createTableQueryEnemy = "CREATE TABLE IF NOT EXISTS enemy ("
+                                            "id INT AUTO_INCREMENT PRIMARY KEY, "
+                                            "name VARCHAR(255) UNIQUE NOT NULL, "
+                                            "health INT, strength INT NOT NULL, "
+                                            "xp_worth double NOT NULL, "
+                                            "biome_id INT, "
+                                            "FOREIGN KEY (biome_id) REFERENCES biome(id)"
+                                            ");";
             query.exec(createTableQueryEnemy);
 
             QString createTableQueryHero = "CREATE TABLE IF NOT EXISTS hero ("
@@ -55,15 +70,12 @@ class DB_Handler{
                                         ");";
             query.exec(createTableQueryHero);
 
-            QString createTableQueryBiome = "CREATE TABLE IF NOT EXISTS biome ("
-                                        "id INT AUTO_INCREMENT PRIMARY KEY,"
-                                        "name VARCHAR(255) UNIQUE NOT NULL,"
-                                        "type VARCHAR(255) NOT NULL,"
-                                        "enemy_count double NOT NULL,"
-                                        "level int NOT NULL,"
-                                        "gold double NOT NULL"
-                                        ");";
-            query.exec(createTableQueryBiome);
+            create_admin();
+        }
+
+        void create_admin(){
+            query.prepare("INSERT IGNORE INTO hero (name, level, currentHP, maxHP, strength, xp, gold) VALUES ('Admin',10,28,28,12,10000,10000)");
+            query.exec();
         }
 
         bool check_for_hero(std::string name){
@@ -238,3 +250,6 @@ class DB_Handler{
 }; 
 
 #endif
+
+
+

@@ -13,7 +13,7 @@ class Game {
         Biome _biome;
 
     public: 
-        Game(){
+        Game(std::string username, std::string password) : longvein(username, password){
             system("clear");
             if (start_game()){
                 welcome_back();

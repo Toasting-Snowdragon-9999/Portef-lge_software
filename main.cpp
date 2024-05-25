@@ -2,7 +2,19 @@
 #include "game.cpp"
 
 int main(int, char**){
-        Game game; 
+        std::string username;
+        std::cout << "Type username for database ..:";
+        std::cin >> username;
+        std::cout << std::endl;
+
+        std::string password;
+        std::cout << "Type password for database ..:";
+        std::cin >> password;
+        std::cout << std::endl;
+
+        DB_Handler db(username, password);
+        db.set_up_db();
+        Game game(username, password);
         while (1){
                 try{
                         game.run();
