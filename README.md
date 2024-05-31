@@ -1,2 +1,1 @@
-# Portef-lge_software
-Portefølge_software
+Første iteration er lavet i VSCode derefter er der skiftet over til QT Creator. 
