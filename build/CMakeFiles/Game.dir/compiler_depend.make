@@ -635,9 +635,11 @@ CMakeFiles/Game.dir/game.cpp.o: ../game.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlversion.h \
   /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
   ../hero.h \
+  ../item.h \
   ../area.h \
   ../enemy.h \
-  ../exit.h
+  ../exit.h \
+  ../shop.h
 
 CMakeFiles/Game.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
@@ -1274,10 +1276,14 @@ CMakeFiles/Game.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlversion.h \
   /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
   ../hero.h \
+  ../item.h \
   ../area.h \
   ../enemy.h \
-  ../exit.h
+  ../exit.h \
+  ../shop.h
 
+
+../shop.h:
 
 ../enemy.h:
 
@@ -2070,6 +2076,8 @@ CMakeFiles/Game.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
+
+../item.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 

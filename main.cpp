@@ -15,6 +15,7 @@ int main(int, char**){
         DB_Handler db(username, password);
         db.set_up_db();
         Game game(username, password);
+
         while (1){
                 try{
                         game.run();

@@ -26,4 +26,18 @@ public:
     }
 };
 
+class ShopReqException : public std::exception {
+public:
+    const char* what() const throw() {
+        return "You dont have the correct requirement for this item.";
+    }
+};
+
+class ShopCostException : public std::exception {
+public:
+    const char* what() const throw() {
+        return "You dont have enough gold for this item.";
+    }
+};
+
 #endif

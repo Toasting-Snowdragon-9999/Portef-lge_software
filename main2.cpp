@@ -3,45 +3,51 @@
 #include "hero.h"
 #include "enemy.h"
 #include "GameControl.h"
-#include "setup.h"
-int main(int, char**){
-        set_up_db();
-        Game_Control longvein; 
-        std::cout << "Game has started!" << std::endl;
-        std::cout << "Do you want to start a new game or load a saved game?" << std::endl;
-        std::cout << "1. New Game ----- 2. Load Game" << std::endl;    
 
-                int game; 
-                std::cin >> game;
-                Hero hero; // Declare the Hero object outside the switch statement
-                std::string name;
-        again: 
-                switch(game){
-                        case 1:
-                                std::cout << "Enter your name: ";
-                                std::cin >> name;
-                                hero.New_Hero(name); // Initialize the Hero object inside the case
-                                break;
-                        case 2:
-        
-                                std::cout << "Here is a list of characters: " << std::endl;
-                                longvein.print_hero_names();
-                                std::cout << "" << std::endl;
-                                std::cout << "Enter the name of the character you want to load: ";
-                                std::cin >> name;
-                                hero.Load_Hero(name); // Initialize the Hero object inside the case
-                                break;
-                        default:
-                                std::cout << "Invalid input!" << std::endl;
-                                goto again; 
-                                break;
-                }
-        hero.heal_max();
-        std::cout << "xp = " <<hero.Hero::get_xp() << std::endl; 
-        std::cout << "hp = " << hero.Hero::get_hp() << hero.get_max_hp() << std::endl; 
-        longvein.fight(hero); 
-        std::cout << "xp = " <<hero.Hero::get_xp() << std::endl; 
-        std::cout << "hp = " << hero.Hero::get_hp() << hero.get_max_hp() << std::endl; 
-        
-        return 0;  
+int main(int, char**){
+    QSqlDatabase db;
+    QSqlQuery query;
+
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");
+//            db.setDatabaseName("longvein");
+    db.setUserName("christopher");  // Change to username
+    db.setPassword("0221");  // Change to password
+    db.open();
+
+    if (!db.isOpen()) {
+    std::cerr << "Error: Unable to open database\n";
+
+    }
+
+    db.exec("CREATE DATABASE IF NOT EXISTS longvein2");
+    db.setDatabaseName("longvein2");
+    db.exec("USE longvein2");
+    query = QSqlQuery(db);
+
+
+    QString createTableQueryEnemy = "CREATE TABLE IF NOT EXISTS enemy ("
+                                    "id INT AUTO_INCREMENT PRIMARY KEY, "
+                                    "name VARCHAR(255) UNIQUE NOT NULL, "
+                                    "health INT, strength INT NOT NULL, "
+                                    "xp_worth double NOT NULL "
+                                    ");";
+    query.exec(createTableQueryEnemy);
+//CREATE TABLE IF NOT EXISTS enemy (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE NOT NULL, health INT, strength INT NOT NULL, xp_worth double NOT NULL, biome_id INT,)
+
+
+    QString createTableQueryHero = "CREATE TABLE IF NOT EXISTS hero ("
+                                "id INT AUTO_INCREMENT PRIMARY KEY,"
+                                "name VARCHAR(255) UNIQUE NOT NULL,"
+                                "level INT NOT NULL,"
+                                "currentHP double,"
+                                "maxHP double NOT NULL,"
+                                "strength INT NOT NULL,"
+                                "xp double NOT NULL"
+                                ");";
+    query.exec(createTableQueryHero);
+
+
+        std::cout << "hello world" << std::endl;
+        return 1;
 }

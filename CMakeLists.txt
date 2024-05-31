@@ -6,8 +6,8 @@
     VERSION 1.0
     LANGUAGES CXX)
 
-  add_executable(Game main.cpp) 
-  target_sources(Game PRIVATE hero.h enemy.h game.cpp GameControl.h area.h database_handler.h exit.h)
+  add_executable(Game main.cpp)
+  target_sources(Game PRIVATE hero.h enemy.h game.cpp GameControl.h area.h database_handler.h exit.h shop.h item.h)
 
   set(CMAKE_CXX_STANDARD 11)
   set(CMAKE_CXX_STANDARD_REQUIRED True)

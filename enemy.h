@@ -15,15 +15,17 @@ class Enemy {
         int _strength; 
         double _xp_worth;
         int _biome_id;
+        int _element_id;
 
     public:
-        Enemy(std::string name, int health, int strength, double xp_worth, int biome_id){
+        Enemy(std::string name, int health, int strength, double xp_worth, int biome_id, int element_id){
 
             this -> _name = name;
             this -> _health = health;
             this -> _strength = strength;
             this -> _xp_worth = xp_worth;
             this -> _biome_id = biome_id;
+            this -> _element_id = element_id;
         }
 
         void dmg_taken(int dmg){
@@ -59,11 +61,35 @@ class Enemy {
             return this->_xp_worth;
         }
 
+        void set_hp(int hp){
+            this -> _health = hp;
+        }
+
+        std::string get_element(){
+            if (_element_id == 1){
+                return "fire";
+            }
+            if (_element_id == 2){
+                return "earth";
+            }
+            if (_element_id == 3){
+                return "metal";
+            }
+            if (_element_id == 4){
+                return "water";
+            }
+            if (_element_id == 5){
+                return "wood";
+            }
+
+        }
+
+
         void boss_fight(){
 
             if (get_name() == "Dragon"){
                 sleep(2);
-                std::cout << "BEHOLD THE GREAT WHITE DRAGON!!!" << std::endl;
+                std::cout << "BEHOLD THE GREAT GREEN DRAGON!!!" << std::endl;
                 sleep(2);
                 std::cout << "/ /   **THUNDER**   / /" << std::endl;
                 std::cout << "- -   **THUNDER**   - -" << std::endl;

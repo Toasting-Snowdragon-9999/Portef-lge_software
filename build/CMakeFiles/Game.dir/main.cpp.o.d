@@ -573,6 +573,8 @@ CMakeFiles/Game.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlversion.h \
  /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
  /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/hero.h \
+ /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/item.h \
  /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/area.h \
  /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/enemy.h \
- /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/exit.h
+ /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/exit.h \
+ /home/chris/Desktop/sdu/MySQL/Exam/Portef-lge_software/shop.h
